@@ -6,10 +6,13 @@
 #include "gxl_p230_2g.dts"
 
 / {
-	compatible = "phicomm,n1", "amlogic,s905d", "amlogic,meson-gxl";
-	model = "Phicomm,N1";
-
 	cvbs-connector {
 		status = "disabled";
 	};
+    gpioleds {
+        sys_led {
+			label = "n1:white:status";
+			gpios = <&gpio_ao GPIOAO_9 GPIO_ACTIVE_HIGH>;
+        };
+    };
 };
